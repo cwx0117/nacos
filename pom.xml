@@ -28,6 +28,7 @@
     <properties>
         <java.version>1.8</java.version>
         <nacos.version>2.2.0</nacos.version>
+        <nacos-auth.version>2.2.0</nacos-auth.version>
         <spring-boot.version>2.7.7</spring-boot.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <nacos.lib.path>${project.basedir}/src/main/resources/lib</nacos.lib.path>
@@ -59,9 +60,9 @@
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-auth</artifactId>
-            <version>${nacos.version}</version>
+            <version>${nacos-auth.version}</version>
             <scope>system</scope>
-            <systemPath>${nacos.lib.path}/nacos-auth-${nacos.version}.jar</systemPath>
+            <systemPath>${nacos.lib.path}/nacos-auth-${nacos-auth.version}.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
@@ -334,5 +335,19 @@
             </releases>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
