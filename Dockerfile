@@ -2,9 +2,11 @@ FROM anapsix/alpine-java:8_server-jre_unlimited
 
 MAINTAINER Lion Li
 
-RUN mkdir -p /ruoyi/nacos  \
 RUN apt-get update && apt-get install -y maven
+
 RUN mvn clean install -Dmaven.test.skip=true
+
+RUN mkdir -p /ruoyi/nacos
 
 WORKDIR /ruoyi/nacos
 
